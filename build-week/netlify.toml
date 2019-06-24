@@ -1,0 +1,4 @@
+[build]
+  base = "build-week/"
+  publish = "build-week/build"
+  command = "yarn build"
