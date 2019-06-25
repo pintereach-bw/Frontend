@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, NavLink, withRouter } from 'react-router-dom'
+
+import Register from './components/Register';
+import Login from './components/Login'
+import PrivateRouter from './components/PrivateRouter'
+import Article from './components/Article'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={ mainDiv }>
+       <Route exact path='/register' component={Register} />
+       <Route exact path='/' component={Login} />
+       <PrivateRouter exact path='/article' component={Article} />
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);
+
+
+const mainDiv = {
+  display: 'flex',
+}
