@@ -23,7 +23,7 @@ class Register extends Component {
   register = e => {
     e.preventDefault();
     this.props.register(this.state.newCredentials).then(() => {
-      this.props.history.push("/article");
+      this.props.history.push("/articles");
     });
   };
 
@@ -32,7 +32,7 @@ class Register extends Component {
       return <p>REGISTERING...</p>;
     }
     return (
-      <>
+      <div style={mainDiv}>
         <div style={registerDiv}>
           <form onSubmit={this.register} style={registerForm}>
             <h2>Register Your Account!</h2>
@@ -57,7 +57,7 @@ class Register extends Component {
             </button>
           </form>
         </div>
-      </>
+      </div>
     );
   }
 }
@@ -71,26 +71,40 @@ export default connect(
   { register }
 )(Register);
 
+const mainDiv = {
+  display: "flex",
+  width: "100%",
+  position: "absolute",
+  height: "100%",
+  backgroundImage:
+    "url(https://images.unsplash.com/photo-1489435518427-e047d52082f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)"
+};
+
 const registerDiv = {
   display: "flex",
   flexFlow: "column wrap",
   alignItems: "center",
-  width: "100%",
-  height: "100%"
+  justifyContent: "center",
+  margin: "10px",
+  maxWidth: "100%",
+  width: "100%"
 };
 
 const registerForm = {
   display: "flex",
-  flexFlow: "column wrap",
+  flexFlow: "column nowrap",
   alignItems: "center",
-  maxWidth: "15",
-  maxHeight: "10%"
+  maxWidth: "100%",
+  maxHeight: "100%",
+  backgroundColor: "white",
+  borderRadius: "8px",
+  padding: "30px"
 };
 
 const inputStyle = {
   padding: "5px",
   borderRadius: "10px",
-  width: "100%",
+  width: "90%",
   textAlign: "center",
   marginBottom: "10px"
 };
@@ -98,7 +112,9 @@ const inputStyle = {
 const buttonStyle = {
   padding: "5px",
   borderRadius: "10px",
-  width: "100%",
+  width: "90%",
   textAlign: "center",
-  marginBottom: "10px"
+  marginBottom: "10px",
+  backgroundColor: "red",
+  color: "white"
 };

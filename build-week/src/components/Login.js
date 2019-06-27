@@ -23,7 +23,7 @@ class Login extends Component {
   login = e => {
     e.preventDefault();
     this.props.login(this.state.credentials).then(() => {
-      this.props.history.push("/article");
+      this.props.history.push("/articles");
     });
   };
 
@@ -51,6 +51,7 @@ class Login extends Component {
               placeholder="password"
             />
             <button style={ buttonStyle }>Log In</button>
+            <p>Don't have an account?<a href='/register'> Register</a></p>
           </form>
         </div>
       </div>
@@ -72,7 +73,7 @@ const mainDiv = {
   width: "100%",
   position: "absolute",
   height: "100%",
-  backgroundImage: "url(https://images.unsplash.com/photo-1540103711724-ebf833bde8d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1655&q=80)"
+  backgroundImage: "url(https://images.unsplash.com/photo-1536236155319-1edab471917c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80)"
 }
 
 const loginDiv = {
@@ -109,5 +110,7 @@ const buttonStyle = {
     borderRadius: "10px",
     width: "90%",
     textAlign: "center",
-    marginBottom: "10px"
+    marginBottom: "10px",
+    backgroundColor: "red",
+  color: "white"
 }
