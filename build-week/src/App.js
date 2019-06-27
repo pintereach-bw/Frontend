@@ -9,14 +9,17 @@ import {
 import Register from "./components/Register";
 import Login from "./components/Login";
 import PrivateRouter from "./components/PrivateRouter";
+import ArticleForm from "./components/ArticleForm"
 import Article from "./components/Article";
+import ArticleListView from "./components/ArticleListView";
 
 function App() {
   return (
     <div style={mainDiv}>
       <Route exact path="/register" component={Register} />
       <Route exact path="/" component={Login} />
-      <PrivateRouter exact path="/article" component={Article} />
+      <Route exact path="/addarticle" component={ArticleForm} />
+      <PrivateRouter exact path="/articles" component={ArticleListView} />
     </div>
   );
 }

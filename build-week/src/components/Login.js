@@ -32,7 +32,7 @@ class Login extends Component {
       return <p>LOGGING IN...</p>;
     }
     return (
-      <>
+      <div style={ mainDiv }>
         <div style={loginDiv}>
           <form onSubmit={this.login} style={loginForm}>
             <h2>Welcome to Pintereach!</h2>
@@ -53,7 +53,7 @@ class Login extends Component {
             <button style={ buttonStyle }>Log In</button>
           </form>
         </div>
-      </>
+      </div>
     );
   }
 }
@@ -67,26 +67,39 @@ export default connect(
   { login }
 )(Login);
 
+const mainDiv = {
+  display: "flex",
+  width: "100%",
+  position: "absolute",
+  height: "100%",
+  backgroundImage: "url(https://images.unsplash.com/photo-1540103711724-ebf833bde8d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1655&q=80)"
+}
+
 const loginDiv = {
   display: "flex",
   flexFlow: "column wrap",
   alignItems: "center",
-  width: "100%",
-  height: "100%",
+  justifyContent: "center",
+  margin: "10px",  
+  maxWidth: "100%",
+  width: "100%"
 };
 
 const loginForm = {
   display: "flex",
-  flexFlow: "column wrap",
+  flexFlow: "column nowrap",
   alignItems: "center",
-  maxWidth: "15",
-  maxHeight: "10%"
+  maxWidth: "100%",
+  maxHeight: "100%",
+  backgroundColor: "white",
+  borderRadius: "8px",
+  padding: "30px"
 };
 
 const inputStyle = {
     padding: "5px",
     borderRadius: "10px",
-    width: "100%",
+    width: "90%",
     textAlign: "center",
     marginBottom: "10px"
 }
@@ -94,7 +107,7 @@ const inputStyle = {
 const buttonStyle = {
     padding: "5px",
     borderRadius: "10px",
-    width: "100%",
+    width: "90%",
     textAlign: "center",
     marginBottom: "10px"
 }
