@@ -10,7 +10,6 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import PrivateRouter from "./components/PrivateRouter";
 import ArticleForm from "./components/ArticleForm"
-import Article from "./components/Article";
 import ArticleListView from "./components/ArticleListView";
 
 function App() {

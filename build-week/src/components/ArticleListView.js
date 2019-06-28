@@ -47,15 +47,3 @@ export default withRouter(
     { getArticles }
   )(ArticleListView)
 );
-
-const card = {
-  display: "flex",
-  flexFlow: "column wrap",
-  width: "500px",
-  height: "500px"
-};
-
-const imgStyle = {
-  height: "500px",
-  width: "500px"
-};
